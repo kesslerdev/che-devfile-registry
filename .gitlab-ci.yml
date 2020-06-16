@@ -1,0 +1,17 @@
+docker-build:
+  image: skimia/docker-make:latest
+  variables:
+    IMAGE_NAME: che-devfile-registry
+  services:
+    - docker:dind
+  before_script:
+    - docker info
+    - make pull
+  script:
+    - make build
+    - make test
+    - make tag
+    - docker image ls
+    - docker login --username="${DOCKER_HUB_USERNAME}" --password="${DOCKER_HUB_PASSWORD}" && make push
+  only:
+    - master
