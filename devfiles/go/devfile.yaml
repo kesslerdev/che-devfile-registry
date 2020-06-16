@@ -30,11 +30,11 @@ components:
   env:
     - name: GOPATH
       # replicate the GOPATH from the plugin
-      value: /go:$(CHE_PROJECTS_ROOT)
+      value: $(CHE_PROJECTS_ROOT):/go
     - name: GOCACHE
       # replicate the GOCACHE from the plugin, even though the cache is not shared
       # between the two
-      value: $(CHE_PROJECTS_ROOT)/.cache
+      value: /tmp/.cache
     - name: GO111MODULE
       value: 'on'
   endpoints:
