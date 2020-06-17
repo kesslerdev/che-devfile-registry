@@ -16,7 +16,7 @@ components:
   alias: go-plugin
   memoryLimit: 512Mi
   env:
-    - value: 'on'
+    - value: 'off'
       name: GO111MODULE
   preferences:
     go.lintTool: 'golangci-lint'
@@ -35,8 +35,6 @@ components:
       # replicate the GOCACHE from the plugin, even though the cache is not shared
       # between the two
       value: /tmp/.cache
-    - name: GO111MODULE
-      value: 'on'
   endpoints:
     - name: '8080-tcp'
       port: 8080

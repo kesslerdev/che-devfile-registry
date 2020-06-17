@@ -1,0 +1,6 @@
+---
+displayName: Go Micro with Generator
+description: Stack with Go 1.12.10 & Go Micro grpc dependencies
+tags: ["Debian", "Go", "Micro"]
+icon: /images/micro.png
+globalMemoryLimit: 1686Mi
