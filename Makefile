@@ -1,7 +1,9 @@
 TAG?=latest
 TAGS_TO_PULL?=latest
 LATEST_TAG?=latest
-DOCKER_IMAGE_NAME=skimia/$(IMAGE_NAME)
+REGISTRY="registry.hub.docker.com"
+ORGANIZATION="skimia"
+DOCKER_IMAGE_NAME=$(REGISTRY)/$(ORGANIZATION)/$(IMAGE_NAME)
 
 .PHONY: pull build test tag push $(TAGS_TO_PULL)
 
@@ -11,7 +13,7 @@ $(TAGS_TO_PULL):
 	@docker pull $(DOCKER_IMAGE_NAME):$(@) || echo "$(DOCKER_IMAGE_NAME):$(@) does not exist yet. Will build it."
 
 build: ## Build docker image
-	@docker build --rm -t $(DOCKER_IMAGE_NAME):$(TAG) .
+	@./build.sh
 
 test:
 	@echo "$(DOCKER_IMAGE_NAME):$(TAG) has no tests."
