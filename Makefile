@@ -2,7 +2,7 @@ TAG?=latest
 TAGS_TO_PULL?=latest
 LATEST_TAG?=latest
 ORGANIZATION=skimia
-DOCKER_IMAGE_NAME=$(REGISTRY)/$(ORGANIZATION)/che-devfile-registry
+DOCKER_IMAGE_NAME=$(ORGANIZATION)/che-devfile-registry
 
 .PHONY: pull build test tag push $(TAGS_TO_PULL)
 
