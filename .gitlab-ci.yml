@@ -1,7 +1,5 @@
 docker-build:
   image: skimia/docker-make:latest
-  variables:
-    IMAGE_NAME: che-devfile-registry
   services:
     - docker:dind
   before_script:
