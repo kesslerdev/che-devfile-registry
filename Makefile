@@ -13,7 +13,7 @@ $(TAGS_TO_PULL):
 	@docker pull $(DOCKER_IMAGE_NAME):$(@) || echo "$(DOCKER_IMAGE_NAME):$(@) does not exist yet. Will build it."
 
 build: ## Build docker image
-	@./build.sh
+	$(shell ./build.sh)
 
 test:
 	@echo "$(DOCKER_IMAGE_NAME):$(TAG) has no tests."
