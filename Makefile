@@ -1,8 +1,8 @@
 TAG?=latest
 TAGS_TO_PULL?=latest
 LATEST_TAG?=latest
-REGISTRY="registry.hub.docker.com"
-ORGANIZATION="skimia"
+REGISTRY=registry.hub.docker.com
+ORGANIZATION=skimia
 DOCKER_IMAGE_NAME=$(REGISTRY)/$(ORGANIZATION)/che-devfile-registry
 
 .PHONY: pull build test tag push $(TAGS_TO_PULL)
