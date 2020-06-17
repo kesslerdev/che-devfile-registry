@@ -3,6 +3,8 @@ TAGS_TO_PULL?=latest
 LATEST_TAG?=latest
 DOCKER_IMAGE_NAME=skimia/$(IMAGE_NAME)
 
+.PHONY: pull build test tag push $(TAGS_TO_PULL)
+
 pull: $(TAGS_TO_PULL)
 
 $(TAGS_TO_PULL):
