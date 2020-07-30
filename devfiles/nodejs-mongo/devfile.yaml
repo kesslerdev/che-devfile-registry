@@ -13,6 +13,9 @@ components:
     type: chePlugin
     id: che-incubator/typescript/latest
     memoryLimit: 512Mi
+  - 
+    type: chePlugin
+    id: ms-vscode/node-debug2/latest
   -
     type: dockerimage
     alias: nodejs
@@ -46,7 +49,7 @@ components:
       - name: mongo-storage
         containerPath: /var/lib/mongodb/data 
     endpoints:
-      - name: mongodb-36-centos7
+      - name: mongodb
         port: 27017
         attributes:
           discoverable: 'true'
